@@ -1,4 +1,4 @@
-# 🤖 Obstacle-Avoiding Robot
+# Obstacle-Avoiding Robot
 
 ![Project Status](https://img.shields.io/badge/status-Completed-brightgreen.svg)
 ![Sensors](https://img.shields.io/badge/Sensors-Ultrasonic%20Sensor-brightgreen.svg)
@@ -119,9 +119,11 @@ The ultrasonic sensor emits sound waves and calculates the distance based on the
 
 ## Demonstration
 
-![Image](https://github.com/user-attachments/assets/f12491c5-e014-449f-afd7-8859e0df4b58)
-![Image](https://github.com/user-attachments/assets/0e2f75f8-dced-4b04-ab07-eb881b0dbc54)
-![Image](https://github.com/user-attachments/assets/b9aa541b-0f93-4a7c-8b36-6f14b9d52438)
+![Image](https://github.com/user-attachments/assets/6db6bd8a-d5f4-40ab-9674-078412d4028b)
+
+![Image](https://github.com/user-attachments/assets/5eed4681-d877-414e-917e-2cbeb0960c8f)
+
+![Image](https://github.com/user-attachments/assets/5a248fce-fcd2-48e4-86ed-8843da2d9879)
 
 ---
 
