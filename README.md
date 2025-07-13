@@ -7,6 +7,8 @@
 ![IDE](https://img.shields.io/badge/IDE-Arduino%20IDE-success.svg)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
+![Image](https://github.com/user-attachments/assets/11a8d127-8df9-40ac-852e-f397863da908)
+
 ---
 
 ## Introduction
@@ -20,7 +22,6 @@ This project involves designing an autonomous robot that avoids obstacles using 
 - Autonomous movement using DC motors
 - Efficient obstacle-avoidance logic
 - Simple and cost-effective design
-
 
 ## Hardware Components
 
@@ -55,10 +56,22 @@ This project involves designing an autonomous robot that avoids obstacles using 
 - Measures the distance to the nearest object using sound waves.
 - The trigger pin sends a short pulse, and the echo pin receives the reflected pulse.
 - The time taken for the pulse to return is converted to distance.
+  
+<img width="1024" height="500" alt="Image" src="https://github.com/user-attachments/assets/5655103a-51f2-4fb1-b3d7-753e2328d417" />
 
 ### Motor Control
-- The L298N motor driver controls the left and right DC motors.
+- The **L298N motor driver** controls the left and right DC motors.
 - Motors are driven in different directions to achieve forward, backward, or turning movements.
+- **Output A, Output B** - To connect two motors.
+- **Driver Power Input** - Board can accept 5V to 35V which will act as the power supply to motor and internal 5V voltage regulator (if it is enabled using jumper).
+- **GND** - Common Ground
+- **5V Output / Logic Input Voltage** - This pin will give 5V output if the on-board regulator is enabled using the jumper, other we should give the logic supply (5V in the case of Arduino Uno) to this pin.
+- **IN1, IN2, IN3, IN4** - H-Bridge control inputs which can be used to control direction of motors.
+- **Enable A and Enable B** pins are used for enabling each bridge or for controlling the speed of the motors using PWM.
+
+<img width="1311" height="870" alt="Image" src="https://github.com/user-attachments/assets/d72299fe-5ef6-461a-aa27-9738a8109f35" />
+<img width="1016" height="747" alt="Image" src="https://github.com/user-attachments/assets/c7701478-1e1b-4907-a5de-b80cbda0ec14" />
+<img width="1035" height="852" alt="Image" src="https://github.com/user-attachments/assets/5a6758d3-49e1-4918-8b6c-d453d10c97c1" />
 
 ### Movement Logic
 1. **Move Forward**: If no obstacle is detected within 15 cm.
@@ -78,17 +91,11 @@ This project involves designing an autonomous robot that avoids obstacles using 
   - **Distance ≥ 15 cm**: Move forward.
   - **Distance < 15 cm**: Stop, move backward, and turn left.
 
-
 ## Software Requirements
 
 - Arduino IDE
 - Arduino USB Drivers
 - Serial Monitor for debugging (optional)
-
----
-
-## Circuit Diagram
-
 
 ---
 
@@ -112,7 +119,9 @@ The ultrasonic sensor emits sound waves and calculates the distance based on the
 
 ## Demonstration
 
-
+![Image](https://github.com/user-attachments/assets/f12491c5-e014-449f-afd7-8859e0df4b58)
+![Image](https://github.com/user-attachments/assets/0e2f75f8-dced-4b04-ab07-eb881b0dbc54)
+![Image](https://github.com/user-attachments/assets/b9aa541b-0f93-4a7c-8b36-6f14b9d52438)
 
 ---
 
