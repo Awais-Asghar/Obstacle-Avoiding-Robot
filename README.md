@@ -3,7 +3,7 @@
 ![Project Status](https://img.shields.io/badge/status-Completed-brightgreen.svg)
 ![Sensors](https://img.shields.io/badge/Sensors-Ultrasonic%20Sensor-pink.svg)
 ![Platform](https://img.shields.io/badge/platform-Arduino-blue.svg)
-![Language](https://img.shields.io/badge/language-C%2FC%2B%2B-00599C.svg)
+![Language](https://img.shields.io/badge/language-C%2FC%2B%2B-purple.svg)
 ![IDE](https://img.shields.io/badge/IDE-Arduino%20IDE-yellow.svg)
 ![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
