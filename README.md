@@ -73,29 +73,72 @@ This project involves designing an autonomous robot that avoids obstacles using 
 <img width="1016" height="747" alt="Image" src="https://github.com/user-attachments/assets/c7701478-1e1b-4907-a5de-b80cbda0ec14" />
 <img width="1035" height="852" alt="Image" src="https://github.com/user-attachments/assets/5a6758d3-49e1-4918-8b6c-d453d10c97c1" />
 
-### Movement Logic
-1. **Move Forward**: If no obstacle is detected within 15 cm.
-2. **Stop**: When an obstacle is detected.
-3. **Move Backward**: Reverses direction for 2.5 seconds upon obstacle detection.
-4. **Turn Left**: Rotates left for 2 seconds to find a clear path.
 
-### Movement Functions
-- `moveForward()`: Sets motor directions and speeds for forward motion.
-- `moveBackward()`: Reverses motor directions for backward motion.
-- `turnLeft()`: Spins the robot left by controlling motor directions and speeds.
-- `Stop()`: Stops the robot by setting motor speeds to zero.
+## Movement Logic
+- `moveForward()`: If no obstacle is detected within 15 cm then sets motor directions and speeds for forward motion.
+- `moveBackward()`: Reverses the motors direction for 2.5 seconds upon obstacle detection.
+- `turnLeft()`: Rotate the robot left for 2 seconds to find a clear path by controlling motor directions and speeds.
+- `Stop()`:  When an obstacle is detected it stops the robot by setting motor speeds to zero.
 
-### Loop Function
-- Measures the distance to the nearest object.
-- Executes movement commands based on the measured distance:
-  - **Distance ≥ 15 cm**: Move forward.
-  - **Distance < 15 cm**: Stop, move backward, and turn left.
+
+## How to Charge Lithium-Ion
+
+### What You Need:
+- **TP4056 charging module** (with or without protection circuit)
+- **Lithium-Ion battery** (typically 3.7V, like an 18650 cell)
+- **Power source** (5V via USB cable or 5V adapter)
+
+###  Wiring Connections
+
+| TP4056 Pin | Connects To           | Description                      |
+|------------|-----------------------|----------------------------------|
+| **BAT+**   | Battery Positive (+)  | Connect to battery's positive terminal |
+| **BAT-**   | Battery Negative (–)  | Connect to battery's negative terminal |
+| **IN+**    | 5V Power Positive     | USB VCC or 5V adapter            |
+| **IN-**    | 5V Power Ground       | USB GND or adapter GND           |
+| **OUT+**   | Output Positive (Optional) | Same as BAT+ if present     |
+| **OUT-**   | Output Negative (Optional) | Same as BAT– if present     |
+
+
+### Charging Status (LED Indicators)
+
+- 🔴 **Red LED ON** → Charging
+- 🟢 **Blue/Green LED ON** → Fully Charged (approx. 4.2V)
+
+### TP4056 Specifications
+
+- **Input Voltage:** 4.5V – 5.5V (recommended: 5V)
+- **Charging Cut-off Voltage:** 4.2V
+- **Max Charging Current:** 1A (default, adjustable by changing onboard resistor)
+
+### Charging Steps
+
+1. Connect **BAT+** and **BAT-** to the Lithium-ion battery terminals.
+2. Connect **IN+** and **IN-** to a 5V power supply (USB or adapter).
+3. Observe LED indicators:
+   - Red = Charging
+   - Green/Blue = Fully Charged
+4. Disconnect power once fully charged (unless using protected module).
+
+
+### Safety Tips
+
+-  Never leave charging unattended.
+-  Use only **genuine 3.7V Li-ion batteries**.
+-  Avoid **short circuits** on BAT terminals.
+-  **Do not reverse polarity** — it can damage the module and the battery.
+-  Use **TP4056 with protection** for safer charging and discharging.
+
+![Image](https://github.com/user-attachments/assets/ec110f7a-28bc-419d-adfa-fa863a73bb27)
+
+---
+
 
 ## Software Requirements
 
 - Arduino IDE
 - Arduino USB Drivers
-- Serial Monitor for debugging (optional)
+- Serial Monitor for debugging
 
 ---
 
@@ -139,12 +182,8 @@ The ultrasonic sensor emits sound waves and calculates the distance based on the
 
 ## Future Improvements
 
-- Add IR sensors for edge detection
 - Add a PID control 
-- Introduce servo motors for dynamic sensor rotation
 - Implement object mapping using SLAM
-- Integrate Bluetooth or Wi-Fi for remote control override
-- Use rechargeable battery and power monitoring circuit
 
 ---
 
@@ -161,7 +200,6 @@ The ultrasonic sensor emits sound waves and calculates the distance based on the
 
 This project was created and implemented by **Awais Asghar** as a part of learning embedded systems and robotics using Arduino.
 
----
 
 ## License
 
