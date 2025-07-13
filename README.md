@@ -1,31 +1,38 @@
-# Obstacle-Avoiding Robot using Ultrasonic Sensor
+# 🤖 Obstacle-Avoiding Robot
 
-## Description
-This project implements an obstacle-avoiding robot using an ultrasonic sensor for distance measurement and motor driver control. The robot moves forward until it detects an obstacle within 15 cm, at which point it stops, moves backward, and makes a left turn to avoid the obstacle. 
-
-The robot's motion is controlled by an Arduino and includes functions for moving forward, backward, turning left, and stopping. The ultrasonic sensor continuously monitors the distance to obstacles and adjusts the robot's motion accordingly.
-
----
-
-## Components Required
-1. **Arduino Uno** (or any compatible board)
-2. **Ultrasonic Sensor (HC-SR04)**  
-   - **Trig Pin**: Sends ultrasonic sound waves  
-   - **Echo Pin**: Receives reflected waves
-3. **Motor Driver (L298N)** or equivalent
-4. **DC Motors** (2 motors, left and right)
-5. **Wheels** (compatible with the DC motors)
-6. **Power Supply** (for motors and Arduino)
-7. **Connecting Wires** and a **Breadboard**
+![Project Status](https://img.shields.io/badge/status-Completed-brightgreen.svg)
+![Sensors](https://img.shields.io/badge/Sensors-Ultrasonic%20Sensor-brightgreen.svg)
+![Platform](https://img.shields.io/badge/platform-Arduino-blue.svg)
+![Language](https://img.shields.io/badge/language-C%2FC%2B%2B-00599C.svg)
+![IDE](https://img.shields.io/badge/IDE-Arduino%20IDE-success.svg)
+![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)
 
 ---
+
+## Introduction
+
+This project involves designing an autonomous robot that avoids obstacles using an ultrasonic sensor. The robot moves forward freely until it detects an obstacle within a predefined distance, upon which it stops, moves backward, and turns left to find a new path.
 
 ## Features
-- **Obstacle Detection**: Measures distance using an ultrasonic sensor.
-- **Autonomous Navigation**: The robot moves forward, avoids obstacles, and recalculates its path.
-- **Motor Control**: Utilizes PWM signals for speed control of DC motors.
 
----
+- Real-time obstacle detection
+- Automatic decision-making for navigation
+- Autonomous movement using DC motors
+- Efficient obstacle-avoidance logic
+- Simple and cost-effective design
+
+
+## Hardware Components
+
+- Arduino Uno (1x)
+- Ultrasonic Sensor HC-SR04 (1x)
+- L298N Motor Driver Module (1x)
+- DC Geared Motors (4x)
+- Robot Chassis (1x)
+- Wheels (4x)
+- Jumper Wires
+- Power Supply (Battery)
+
 
 ## Pin Configuration
 | **Component**       | **Arduino Pin**         |
@@ -40,6 +47,7 @@ The robot's motion is controlled by an Arduino and includes functions for moving
 | Right Motor Pin 2     | 4                      |
 
 ---
+
 
 ## Functional Overview
 
@@ -58,12 +66,6 @@ The robot's motion is controlled by an Arduino and includes functions for moving
 3. **Move Backward**: Reverses direction for 2.5 seconds upon obstacle detection.
 4. **Turn Left**: Rotates left for 2 seconds to find a clear path.
 
----
-
-## Code Breakdown
-### Setup Function
-- Initializes the ultrasonic sensor pins, motor driver pins, and the serial monitor for debugging.
-
 ### Movement Functions
 - `moveForward()`: Sets motor directions and speeds for forward motion.
 - `moveBackward()`: Reverses motor directions for backward motion.
@@ -76,23 +78,80 @@ The robot's motion is controlled by an Arduino and includes functions for moving
   - **Distance ≥ 15 cm**: Move forward.
   - **Distance < 15 cm**: Stop, move backward, and turn left.
 
+
+## Software Requirements
+
+- Arduino IDE
+- Arduino USB Drivers
+- Serial Monitor for debugging (optional)
+
 ---
 
-## Installation and Usage
-1. Connect the components as per the pin configuration table.
-2. Upload the provided Arduino code to the Arduino board.
-3. Power the robot using an appropriate power source.
-4. Place the robot on a flat surface and observe its obstacle-avoidance behavior.
+## Circuit Diagram
+
+
+---
+
+## Working Principle
+
+The ultrasonic sensor emits sound waves and calculates the distance based on the time taken by the echo. If the detected distance is greater than 15 cm, the robot moves forward. If it's less than 15 cm, the robot stops, moves backward for a short duration, and then turns left to avoid the obstacle.
+
+---
+
+##  How to Run
+
+1. Connect all hardware components as per the circuit diagram.
+2. Open the Arduino IDE.
+3. Paste the provided code into a new sketch.
+4. Select the correct board (Arduino Uno) and port.
+5. Upload the code.
+6. Place the robot on the floor and power it on.
+7. Watch it autonomously navigate around obstacles.
+
+---
+
+## Demonstration
+
+
+
+---
+
+## Applications
+
+- Smart autonomous vehicles
+- Line follower upgrades
+- AI navigation-based robots
+- Industrial automation robots
+- Educational STEM kits
 
 ---
 
 ## Future Improvements
-- Add additional sensors for more precise navigation.
-- Implement turning right as an additional obstacle avoidance option.
-- Enhance the logic to handle more complex obstacle layouts.
-- Introduce a buzzer or LED indicators for feedback.
+
+- Add IR sensors for edge detection
+- Add a PID control 
+- Introduce servo motors for dynamic sensor rotation
+- Implement object mapping using SLAM
+- Integrate Bluetooth or Wi-Fi for remote control override
+- Use rechargeable battery and power monitoring circuit
+
+---
+
+## Troubleshooting / Common Issues
+
+- **Robot not moving:** Check motor connections and power supply.
+- **Ultrasonic sensor not detecting:** Ensure correct wiring of `trig` and `echo` pins.
+- **Inconsistent movements:** Confirm proper voltage to the motor driver.
+- **Serial Monitor not showing:** Make sure the correct baud rate (9600) is selected.
+
+---
+
+## Credits / Acknowledgements
+
+This project was created and implemented by **Awais Asghar** as a part of learning embedded systems and robotics using Arduino.
 
 ---
 
 ## License
-This project is open-source and can be freely used and modified for educational purposes.
+
+This project is licensed under the **MIT License**. You are free to use, modify, and distribute it with attribution.
